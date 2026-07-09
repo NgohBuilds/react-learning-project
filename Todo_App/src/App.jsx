@@ -1,24 +1,19 @@
-import { icons } from "./data/data"
+import { TodoHead } from "./components/TodoHead"
 import check from "./assets/icon-check.svg"
 import cross from "./assets/icon-cross.svg"
+import { Tasks} from "./data/Tasks"
 
-const Tasks =["manger","dormir"]
+
 const filterBtns = ["All", "Active", "Completed"]
 
 function App() {
  
   return (
-    <>
+   
       <div id="todoContainer" style={{backgroundColor: "blue"}}>
 
-        <div className="header">
-            <h1 id="title"> TODO</h1>
-            <img src={icons.moon} alt={icons.moon} />
-        </div>
-
-        <input
-          value={""}
-          type="text" />
+        <TodoHead/>
+        <input value={""} type="text" placeholder=""/>
 
         <div className="TasksContainer">
           <ul>
@@ -33,6 +28,7 @@ function App() {
             )}
 
           </ul>
+
           <div className="summary">
             <span class="itemsLeft">{Tasks.length} items left</span>
             <span className="clearCompleted">Clear Completed</span>
@@ -54,7 +50,6 @@ function App() {
 
       </div>
       
-    </>
   )
 }
 
