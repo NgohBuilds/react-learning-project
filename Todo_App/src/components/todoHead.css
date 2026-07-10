@@ -1,0 +1,11 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#title {
+    color: white;
+    letter-spacing: .7rem;
+    
+}
