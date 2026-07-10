@@ -1,0 +1,135 @@
+@font-face {
+    font-family: Josefin-Bold;
+    src: url(./assets/Josefin_Sans/static/JosefinSans-Bold.ttf);
+}
+@font-face{
+    font-family: Josefin-light;
+    src: url(./assets/Josefin_Sans/static/JosefinSans-Regular.ttf);
+}
+:root {
+
+    /*COLORS SHARED*/
+    --filter-selected :  hsl(220, 98%, 61%);
+    --check-background: linear-gradient(
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+);
+    /*LIGHT THEME*/
+    --Gray50: hsl(0, 0%, 98%);
+    --Purple300: hsl(234, 39%, 85%);
+    --Gray300: hsl(233, 11%, 84%);
+    --Gray600: hsl(236, 9%, 61%);
+    --Navy850: hsl(235, 19%, 35%);
+
+  /* ==========================
+     Dark Theme Colors
+     ========================== */
+
+  --navy-950: hsl(235, 21%, 11%);
+  --navy-900: hsl(235, 24%, 19%);
+
+  --purple-300: hsl(234, 39%, 85%);
+  --purple-100-hover: hsl(236, 33%, 92%);
+  --purple-600: hsl(235, 16%, 43%);
+  --purple-700: hsl(233, 14%, 35%);
+  --purple-800: hsl(237, 14%, 26%);
+
+  --gray-600: hsl(236, 9%, 61%);
+
+  /* ==========================
+     Typography
+     ========================== */
+
+  --font-family-bold: Josefin-Bold;
+  --font-family-light: Josefin-light;
+  --font-size-body: 18px;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+
+}
+
+
+html {
+    --color-todo : var(--Gray600);
+    --color-todo-completed : var(--Gray50);
+    --color-summarise : var(--Gray300);
+    --color-summarise-hover : var(--Navy850);
+    --bg-color-Task : var(--Gray50);
+    --body-bg : var(--Gray50);
+    --bg-destop: url(./assets/bg-desktop-light.jpg);
+    --bg-mobile: url(./assets/bg-mobile-light.jpg);
+
+}
+
+html.dark {
+    --color-todo : var(--purple-300);
+    --color-todo-completed : var(--Gray50);
+    --color-summarise : var(--Gray300);
+    --color-summarise-hover : var(--purple-100-hover);
+    --bg-color-Task : var(--navy-900);
+    --body-bg: var(--navy-950);
+    --bg-destop: url(./assets/bg-desktop-dark.jpg);
+    --bg-mobile: url(./assets/bg-mobile-dark.jpg);
+
+}
+
+*, ::after, ::before{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+
+    font-family: var(--font-family-light);
+    font-size: var(--font-size-body);
+
+    #root {
+
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-repeat:  no-repeat;
+        background-image: var(--bg-mobile);
+        background-color: var(--body-bg);
+       
+    }
+
+    #root >*{
+        height: 100%;
+        margin-block: min(2.5rem, 10%);
+    }
+
+    @media screen and (min-width : 376px) {
+        #root{
+        background-repeat:  no-repeat;
+        background-image: var(--bg-destop);
+        background-color: var(--body-bg);
+
+        }
+
+    
+    }
+}
+
+
+
+/*TODOCONTAINER*/
+#todoContainer{
+    width: 100%;
+    max-width: calc(375px - 20%);
+   
+}
+
+
+
+
+
+
+
