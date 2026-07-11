@@ -2,6 +2,7 @@ import { TodoHead } from "./components/TodoHead"
 import check from "./assets/icon-check.svg"
 import cross from "./assets/icon-cross.svg"
 import { Tasks} from "./data/Tasks"
+import "./index.css"
 
 
 const filterBtns = ["All", "Active", "Completed"]
@@ -10,10 +11,10 @@ function App() {
  
   return (
    
-      <div id="todoContainer" style={{backgroundColor: "blue"}}>
+      <div id="todoContainer">
 
         <TodoHead/>
-        <input value={""} type="text" placeholder=""/>
+        <input value={""} type="text" placeholder="Create a new todo..."/>
 
         <div className="TasksContainer">
           <ul>
@@ -21,14 +22,16 @@ function App() {
               (task, index) =>(
               
               <li key={index}>
-                <input type="checkbox" name="" id="" />
-                <span>{task}</span>
-                <img src={cross} />
+                <div>
+                  <input type="checkbox" name="" id="" />
+                  <p>{task}</p>
+                </div>
+                <img src={cross} width="18" height="18"/>
               </li>)
             )}
 
           </ul>
-
+          
           <div className="summary">
             <span class="itemsLeft">{Tasks.length} items left</span>
             <span className="clearCompleted">Clear Completed</span>
