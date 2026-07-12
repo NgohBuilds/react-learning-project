@@ -64,6 +64,7 @@ html {
     --body-bg : var(--Gray50);
     --bg-destop: url(./assets/bg-desktop-light.jpg);
     --bg-mobile: url(./assets/bg-mobile-light.jpg);
+    --theme-config-icon :url(./assets/icon-moon.svg);
     --task-desc : var(--Navy850);
 
 }
@@ -79,6 +80,8 @@ html.dark {
     --bg-destop: url(./assets/bg-desktop-dark.jpg);
     --bg-mobile: url(./assets/bg-mobile-dark.jpg);
     --task-desc : var(--purple-300);
+    --theme-config-icon :url(./assets/icon-sun.svg);
+
 
 
 }
@@ -98,7 +101,7 @@ body{
 
     #root {
 
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -143,10 +146,18 @@ body{
     border: none;
     padding-block: .75rem;
     padding-inline: 1rem;
+    background-color: var(--bg-color-Task);
+
 
 }
+
+#todoContainer input[type ="text"]:focus{
+    outline: none;
+}
+
 #todoContainer input[type ="text"]::placeholder{
-    
+        color: var(--Navy850);
+
 
 }
 
@@ -154,15 +165,16 @@ body{
 
 /*ITEMS*/
 
-.TasksContainer, input[type="text"]{
+.TasksContainer, input[type="text"], .filter-btn{
     border-radius: .5rem;
     overflow: hidden;
 }
-.TasksContainer{
+.TasksContainer, .filter-btn{
     box-shadow: rgba(0, 0, 0, 0.085) 3px 4px 20px;
 }
 
 .TasksContainer li{
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -202,7 +214,7 @@ body{
     background-image: var(--check-background);
 }
 .TasksContainer li input[type="checkbox"]:checked::before{
-    content:"";
+    content:url(./assets/icon-check.svg);
     color:white;
     display:flex;
     justify-content:center;
@@ -222,9 +234,32 @@ body{
     padding-block: 1rem;
     padding-inline: 5%;
 
+}
+
+.filter-btn ul{
+    display: flex;
+    list-style-type: none;
+    color: var(--Gray600);
+    gap: 1rem;
+    font-weight: var(--font-weight-bold);
+    font-size: 14px;
+    padding-block: 1.1rem;
+    background-color: white;
+    justify-content: center;
+    background-color: var(--bg-color-Task);
+
 
 }
 
 
 
+.active{
+    color: var(--filter-selected);
+}
+
+.footer {
+    text-align: center;
+    color: var(--Gray600);
+    font-size: 1rem;
+}
 
