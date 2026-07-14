@@ -56,7 +56,7 @@
 
 html {
     --color-todo : var(--Gray600);
-    --color-todo-completed : var(--Gray50);
+    --color-todo-completed : var(--Gray600);
     --color-summarise : var(--Gray600);
     --color-summarise-hover : var(--Navy850);
     --bg-color-Task : var(--Gray50);
@@ -225,6 +225,10 @@ body{
 .TasksContainer li p{
     display: flex;
     align-items: center;
+}
+.TasksContainer li p.checked{
+    color:var(--color-todo-completed);
+    text-decoration:line-through;
 }
 .summary{
     display: flex;
