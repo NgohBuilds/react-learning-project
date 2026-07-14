@@ -3,28 +3,86 @@ import check from "./assets/icon-check.svg"
 import cross from "./assets/icon-cross.svg"
 import { Tasks} from "./data/Tasks"
 import "./index.css"
+import { useState } from "react"
 
 
 const filterBtns = ["All", "Active", "Completed"]
 
 function App() {
+
+ 
+  const [inputValue, setInputValue] = useState('')
+  const [tasks, setTasks] = useState(Tasks)
+  const [filter, setFilter] = useState('All')
+
+  const filteredTasks = tasks.filter(task => {
+    switch(filter) {
+        case "Active":
+            return !task.completed;
+
+        case "Completed":
+            return task.completed;
+
+        default:
+            return true;
+    }
+});
+
+  const leftTasks = tasks.filter(task => task.completed === false)
+
+  function handleInputValue(e){
+      setInputValue(e.target.value)
+  }
+
+  function handleAddTask(){
+
+    setTasks(prevTask => [
+      {
+      id : Date.now(),
+      content : inputValue,
+      completed : false
+    }, 
+    ...prevTask])
+  }
+
+  function handleChecked(id){
+
+    setTasks(previousTasks => previousTasks.map(
+      task => task.id === id ? {...task, completed : !task.completed, } : task
+      
+    ))
+
+  }
+
+  function handleBtnFilter(btnName){
+    setFilter(btnName)
+
+  }
  
   return (
    
       <div id="todoContainer">
 
         <TodoHead/>
-        <input value={""} type="text" placeholder="Create a new todo..."/>
+        <input 
+          value={inputValue}
+          onChange={handleInputValue}
+          type="text" 
+          placeholder="Create a new todo..."/>
+        <button  onClick={handleAddTask}>Add</button>
+
 
         <div className="TasksContainer">
           <ul>
-            {Tasks.map(
-              (task, index) =>(
+            {filteredTasks.map(
+              task =>(
               
-              <li key={index}>
+              <li key={task.id}>
                 <div>
-                  <input type="checkbox" name="" id="" />
-                  <p>{task}</p>
+                  
+                  <input type="checkbox" name={task.content}  id={task.id} onChange={()=> handleChecked(task.id)} checked={task.completed} />
+                  {task.completed ? <p className="checked">{task.content}</p> : <p>{task.content}</p> }
+                  
                 </div>
                 <img src={cross} width="18" height="18"/>
               </li>)
@@ -33,7 +91,7 @@ function App() {
           </ul>
           
           <div className="summary">
-            <span class="itemsLeft">{Tasks.length} items left</span>
+            <span className="itemsLeft">{leftTasks.length} items left</span>
             <span className="clearCompleted">Clear Completed</span>
           </div>
         </div>
@@ -41,7 +99,11 @@ function App() {
         <div className="filter-btn">
           <ul>
             {filterBtns.map((btn , index) =>(
-              <li key={index}>{btn}</li>
+              <li key={index} >
+                <button onClick= {(e)=>{handleBtnFilter(btn)}}>
+                  {btn}
+                </button>
+              </li>
             ))}
           </ul>
           
