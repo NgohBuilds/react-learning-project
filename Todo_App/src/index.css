@@ -28,13 +28,11 @@
 
   --navy-950: hsl(235, 21%, 11%);
   --navy-900: hsl(235, 24%, 19%);
-
   --purple-300: hsl(234, 39%, 85%);
   --purple-100-hover: hsl(236, 33%, 92%);
   --purple-600: hsl(235, 16%, 43%);
   --purple-700: hsl(233, 14%, 35%);
   --purple-800: hsl(237, 14%, 26%);
-
   --gray-600: hsl(236, 9%, 61%);
 
   /* ==========================
@@ -47,16 +45,12 @@
 
   --font-weight-regular: 400;
   --font-weight-bold: 700;
-
-
-
-
 }
 
 
 html {
     --color-todo : var(--Gray600);
-    --color-todo-completed : var(--Gray600);
+    --color-todo-completed : var(--Gray300);
     --color-summarise : var(--Gray600);
     --color-summarise-hover : var(--Navy850);
     --bg-color-Task : var(--Gray50);
@@ -66,14 +60,16 @@ html {
     --bg-mobile: url(./assets/bg-mobile-light.jpg);
     --theme-config-icon :url(./assets/icon-moon.svg);
     --task-desc : var(--Navy850);
-    --text-hover : var(--Navy850)
+    --text-hover : var(--Navy850);
+    --place-holder-color : var(--Gray600);
+    --color-line-through : var(--place-holder-color)
 
 
 }
 
 html.dark {
     --color-todo : var(--purple-300);
-    --color-todo-completed : var(--Gray50);
+    --color-todo-completed : var(--purple-600);
     --color-summarise : var(--Gray300);
     --color-summarise-hover : var(--purple-100-hover);
     --bg-color-Task : var(--navy-900);
@@ -81,12 +77,11 @@ html.dark {
     --body-bg: var(--navy-950);
     --bg-destop: url(./assets/bg-desktop-dark.jpg);
     --bg-mobile: url(./assets/bg-mobile-dark.jpg);
-    --task-desc : var(--purple-300);
+    --task-desc : var(--Gray600);
     --theme-config-icon :url(./assets/icon-sun.svg);
-    --text-hover : var(--purple-100-hover)
-
-
-
+    --text-hover : var(--purple-100-hover);
+    --place-holder-color : var(--purple-600);
+    --color-line-through : var(--Gray50);
 
 }
 
@@ -108,7 +103,7 @@ body{
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        padding-top: 15%;
         align-items: center;
         background-repeat:  no-repeat;
         background-image: var(--bg-mobile);
@@ -135,6 +130,8 @@ body{
 
 
 
+
+
 /*TODOCONTAINER*/
 #todoContainer{
     width: 100%;
@@ -151,17 +148,20 @@ body{
     padding-block: .75rem;
     padding-inline: 1rem;
     background-color: var(--bg-color-Task);
-
-
+    caret-color: var(--filter-selected) ;
+    color: var(--task-desc);
+    font-family: var(--font-family-bold);
 }
 
 #todoContainer input[type ="text"]:focus{
     outline: none;
+    
+
 }
 
 #todoContainer input[type ="text"]::placeholder{
-        color: var(--Navy850);
-
+    color: var(--place-holder-color);
+    font-family: var(--font-family-light);
 
 }
 
@@ -211,13 +211,22 @@ body{
     border-radius: 50%;
     background:transparent;
     border: 1px solid var(--border-task);
+    transition-delay: 1ms;
+    transition-timing-function: ease-in-out ;
 
 }
 
+
+.TasksContainer li input[type="checkbox"]:hover{
+
+    border: 1px solid var(--filter-selected);
+
+}
 .TasksContainer li input[type="checkbox"]:checked{
     background-image: var(--check-background);
 }
 .TasksContainer li input[type="checkbox"]:checked::before{
+
     content:url(./assets/icon-check.svg);
     color:white;
     display:flex;
@@ -231,8 +240,24 @@ body{
     align-items: center;
 }
 .TasksContainer li p.checked{
-    color:var(--color-todo-completed);
+    color: var(--color-todo-completed);
     text-decoration:line-through;
+    text-decoration-color: var(--color-line-through);
+
+}
+
+
+.TasksContainer li img {
+    display: none;
+    transition: 1ms ease-in-out;
+}
+
+.TasksContainer li:hover img{
+    display: block;
+}
+.TasksContainer>*:not(input[type="text"]){
+    cursor: pointer;
+
 }
 .summary{
     display: flex;
@@ -247,7 +272,7 @@ body{
 .filter-btn ul{
     display: flex;
     list-style-type: none;
-    color: var(--Gray600);
+    color: var(--color-todo-completed);
     gap: 1rem;
     font-weight: var(--font-weight-bold);
     font-size: 14px;
@@ -265,7 +290,7 @@ body{
 }
 
 .filter-btn button:hover{
-    
+
 }
 
 

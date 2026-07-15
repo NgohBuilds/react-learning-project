@@ -35,7 +35,7 @@ function App() {
   }
 
   function handleAddTask(){
-
+    if (inputValue.trim() =="") return 
 
     setTasks(prevTask => [
       {
@@ -62,8 +62,7 @@ function App() {
   }
 
   function deleteTasks(id){
-    //delete
-    // setSupprimer(Tasks.filter(task => task.id != id))
+    
     setTasks(previousTask => previousTask.filter(task => task.id !== id))
   }
 
@@ -79,10 +78,9 @@ function App() {
         <input 
           value={inputValue}
           onChange={handleInputValue}
+          onKeyDown={(e)=>{if(e.key =="Enter"){ handleAddTask()}}}
           type="text" 
           placeholder="Create a new todo..."/>
-        <button  onClick={handleAddTask}>Add</button>
-
 
         <div className="TasksContainer">
           <ul>
