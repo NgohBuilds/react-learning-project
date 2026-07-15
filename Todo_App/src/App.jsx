@@ -36,6 +36,7 @@ function App() {
 
   function handleAddTask(){
 
+
     setTasks(prevTask => [
       {
       id : Date.now(),
@@ -43,6 +44,7 @@ function App() {
       completed : false
     }, 
     ...prevTask])
+    setInputValue("")
   }
 
   function handleChecked(id){
@@ -57,6 +59,16 @@ function App() {
   function handleBtnFilter(btnName){
     setFilter(btnName)
 
+  }
+
+  function deleteTasks(id){
+    //delete
+    // setSupprimer(Tasks.filter(task => task.id != id))
+    setTasks(previousTask => previousTask.filter(task => task.id !== id))
+  }
+
+  function clearCompletedTask(){
+    setTasks(previousTask => previousTask.filter(task => !task.completed))
   }
  
   return (
@@ -84,7 +96,7 @@ function App() {
                   {task.completed ? <p className="checked">{task.content}</p> : <p>{task.content}</p> }
                   
                 </div>
-                <img src={cross} width="18" height="18"/>
+                <img src={cross} width="18" height="18" onClick={()=> deleteTasks(task.id)}/>
               </li>)
             )}
 
@@ -92,7 +104,7 @@ function App() {
           
           <div className="summary">
             <span className="itemsLeft">{leftTasks.length} items left</span>
-            <span className="clearCompleted">Clear Completed</span>
+            <span className="clearCompleted" onClick={clearCompletedTask}>Clear Completed</span>
           </div>
         </div>
 

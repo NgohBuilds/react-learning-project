@@ -66,6 +66,8 @@ html {
     --bg-mobile: url(./assets/bg-mobile-light.jpg);
     --theme-config-icon :url(./assets/icon-moon.svg);
     --task-desc : var(--Navy850);
+    --text-hover : var(--Navy850)
+
 
 }
 
@@ -81,6 +83,8 @@ html.dark {
     --bg-mobile: url(./assets/bg-mobile-dark.jpg);
     --task-desc : var(--purple-300);
     --theme-config-icon :url(./assets/icon-sun.svg);
+    --text-hover : var(--purple-100-hover)
+
 
 
 
@@ -252,10 +256,25 @@ body{
     justify-content: center;
     background-color: var(--bg-color-Task);
 
+}
 
+.filter-btn button{
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.filter-btn button:hover{
+    
 }
 
 
+.clearCompleted{
+    cursor: pointer;
+}
+.clearCompleted:hover{
+    color: var(--text-hover);
+}
 
 .active{
     color: var(--filter-selected);
