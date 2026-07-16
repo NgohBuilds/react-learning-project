@@ -14,6 +14,7 @@ function App() {
   const [inputValue, setInputValue] = useState('')
   const [tasks, setTasks] = useState(Tasks)
   const [filter, setFilter] = useState('All')
+  
 
   const filteredTasks = tasks.filter(task => {
     switch(filter) {
@@ -110,7 +111,10 @@ function App() {
           <ul>
             {filterBtns.map((btn , index) =>(
               <li key={index} >
-                <button onClick= {(e)=>{handleBtnFilter(btn)}}>
+                <button onClick= {(e)=>{
+                  handleBtnFilter(btn, e)
+ 
+                }} >
                   {btn}
                 </button>
               </li>

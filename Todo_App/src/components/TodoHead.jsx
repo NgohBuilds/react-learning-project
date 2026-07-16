@@ -4,7 +4,7 @@ import { useState } from "react"
 
 export function TodoHead()
 {
-    const [isDarkTheme, setisDarkTheme] = useState(false)
+    const [isDarkTheme, setisDarkTheme] = useState(true)
     const html = document.documentElement
     function handleChangeTheme(){
         setisDarkTheme(prev => !prev)
