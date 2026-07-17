@@ -111,10 +111,7 @@ function App() {
           <ul>
             {filterBtns.map((btn , index) =>(
               <li key={index} >
-                <button onClick= {(e)=>{
-                  handleBtnFilter(btn, e)
- 
-                }} >
+                <button  className={btn === filter ? "active": ""} onClick= {()=> handleBtnFilter(btn)} >
                   {btn}
                 </button>
               </li>
