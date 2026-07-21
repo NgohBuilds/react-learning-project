@@ -1,18 +1,96 @@
-# React + Vite
+#  Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive Todo application built with React to consolidate my understanding of the library through a complete, real-world project.
 
-Currently, two official plugins are available:
+Rather than simply recreating a Todo application, this project was an opportunity to apply React fundamentals, improve my problem-solving skills, and build an interactive user interface from scratch.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> **Project Status:** ✔️ Core features completed (≈90%)
+> Planned improvements include drag-and-drop reordering and local data persistence using Local Storage.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Features
 
-Note: This will impact Vite dev & build performances.
+Users can:
 
-## Expanding the ESLint configuration
+* ✅ Add new todos
+* ✅ Mark todos as completed
+* ✅ Delete todos
+* ✅ Filter todos by:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  * All
+  * Active
+  * Completed
+* ✅ Clear all completed todos
+* ✅ Toggle between light and dark themes
+* ✅ Responsive design for desktop and mobile devices
+* ✅ Hover states for interactive elements
+
+---
+
+## Planned Improvements
+
+The following features will be added in future updates:
+
+* 🔄 Drag-and-drop support to reorder tasks
+* 💾 Persist todos using Local Storage so data remains after refreshing the page
+
+---
+
+## Tech Stack
+
+* React v19.2
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+* Vite
+
+---
+
+## What I Learned
+
+This project allowed me to strengthen my understanding of:
+
+* Component-based architecture
+* React state management with `useState`
+* Props and component communication
+* Event handling
+* Conditional rendering
+* Rendering dynamic lists
+* Responsive UI development
+* Organizing a React project
+* Debugging and solving UI issues
+
+More importantly, it taught me how to break down a complete application into reusable components and progressively build features while maintaining clean code.
+
+---
+
+## Installation
+
+```bash
+git clone https://github.com/your-username/todo-app.git
+
+cd Todo-app
+
+npm install
+
+npm run dev
+```
+
+---
+
+## Preview
+
+[Todo App Desktop]("./preview/todo_App_desktop.png")
+[Todo App Mobile]("./preview/Todo_App_mobile.png")
+
+---
+
+## Author
+
+**Gabriel Ngoh**
+Master's student in Computer Science (MIAGE), specializing in **Management Information Systems and Application Engineering (MSIIA)**.
+
+Passionate about software engineering and artificial intelligence, I enjoy building projects that strengthen my skills in frontend and backend development while continuously improving my problem-solving and software design abilities.
+
+My long-term goal is to become a Software Engineer with a specialization in Artificial Intelligence, building intelligent, scalable, and impactful software solutions.
