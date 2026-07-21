@@ -1,11 +1,15 @@
 .header{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1.25rem; /*Succeptible de changer selon la taille de la  bulle de saisie*/
+  
     
 }
 
 #title {
+    
     color: white;
     letter-spacing: .7rem;
-    
+    font-size: clamp(1.389rem, 1.193rem + 0.939vh, 1.944rem);
+
 }
