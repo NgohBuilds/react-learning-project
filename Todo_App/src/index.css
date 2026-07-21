@@ -45,6 +45,16 @@
 
   --font-weight-regular: 400;
   --font-weight-bold: 700;
+
+      /* Light mode */
+  --shadow-light: rgba(0, 0, 0, 0.10);
+  --shadow-light-strong: rgba(0, 0, 0, 0.16);
+  --shadow-light-inset: rgba(255, 255, 255, 0.85);
+
+    /* Dark mode */
+  --shadow-dark: rgba(0, 0, 0, 0.35);
+  --shadow-dark-strong: rgba(0, 0, 0, 0.50);
+  --shadow-dark-inset: rgba(255, 255, 255, 0.08);
 }
 
 
@@ -62,7 +72,10 @@ html {
     --task-desc : var(--Navy850);
     --text-hover : var(--Navy850);
     --place-holder-color : var(--Gray600);
-    --color-line-through : var(--place-holder-color)
+    --color-line-through : var(--place-holder-color);
+    --button-filter : var(--Navy850);
+    --shadow-inset : var(--shadow-light-inset);
+    --shadow : var(--shadow-light)
 
 
 }
@@ -82,6 +95,9 @@ html.dark {
     --text-hover : var(--purple-100-hover);
     --place-holder-color : var(--purple-600);
     --color-line-through : var(--Gray50);
+    --button-filter : var(--Gray50);
+    --shadow-inset : var(--shadow-dark-inset);
+    --shadow : var(--shadow-dark);
 
 }
 
@@ -104,6 +120,7 @@ body{
         display: flex;
         flex-direction: column;
         padding-top: 15%;
+        justify-content: center;
         align-items: center;
         background-repeat:  no-repeat;
         background-image: var(--bg-mobile);
@@ -117,6 +134,7 @@ body{
 
     @media screen and (min-width : 376px) {
         #root{
+        padding-top: 2vh;
         background-repeat:  no-repeat;
         background-image: var(--bg-destop);
         background-color: var(--body-bg);
@@ -125,8 +143,24 @@ body{
 
     
     }
+    @media screen and (min-width : 768px) {
+        .TasksContainer li img {
+        display: none;
+        transition: 1ms ease-in-out;
+        }
+
+        .TasksContainer li:hover img{
+        display: block;
+        }
+        
+    }
 }
 
+button{
+    color: var(--color-todo-completed) ;
+    font-weight: var(--font-family-bold);
+    cursor: pointer;
+}
 
 /*TODOCONTAINER*/
 #todoContainer{
@@ -179,13 +213,21 @@ body{
     align-items: center;
     list-style:none;    
     background-color: var(--bg-color-Task);
-    border-bottom: 1px solid var(--Gray300);
+    border-bottom: 1px solid var(--purple-800);
     padding-inline: 5%;
     font-size: clamp(0.667rem, 0.549rem + 0.563vh, 1rem);
     color: var(--task-desc);
     font-weight: var(--font-weight-bold);
+    transition: transform 180ms ease, box-shadow 180ms ease;
 
 
+}
+
+.TasksContainer li:hover{
+    transform: translateY(-2px);
+    box-shadow:
+        inset 0 1px 0 var(--shadow-inset),
+        0 6px 18px var(--shadow);
 }
 
 .TasksContainer li div {
@@ -195,6 +237,8 @@ body{
     width: 100%;
 
 }
+
+
 
 
 .TasksContainer li input[type="checkbox"] {
@@ -245,14 +289,6 @@ body{
 }
 
 
-.TasksContainer li img {
-    display: none;
-    transition: 1ms ease-in-out;
-}
-
-.TasksContainer li:hover img{
-    display: block;
-}
 .TasksContainer>*:not(input[type="text"]){
     cursor: pointer;
 
@@ -281,18 +317,15 @@ body{
 
 }
 
- button{
-    color: var(--color-todo-completed) ;
-    font-weight: var(--font-family-bold);
-}
-
 .filter-btn button{
     background: transparent;
     outline: none;
     border: none;
+    transition: 5ms ease-in-out 2ms;
 }
 
 .filter-btn button:hover{
+    color: var(--button-filter);
 
 }
 
