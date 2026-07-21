@@ -119,8 +119,8 @@ body{
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        padding-top: 15%;
-        justify-content: center;
+        padding-top: 20%;
+        justify-content: flex-start;
         align-items: center;
         background-repeat:  no-repeat;
         background-image: var(--bg-mobile);
@@ -134,10 +134,11 @@ body{
 
     @media screen and (min-width : 376px) {
         #root{
-        padding-top: 2vh;
-        background-repeat:  no-repeat;
+        padding-top: 15vh;
         background-image: var(--bg-destop);
         background-color: var(--body-bg);
+        background-size: 100% ;
+
 
         }
 
@@ -302,6 +303,10 @@ button{
     padding-block: 1.25rem;
     padding-inline: 5%;
 
+}
+
+.invisible {
+    display: none;
 }
 
 .filter-btn ul{
