@@ -80,9 +80,9 @@ More importantly, it taught me how to break down a complete application into reu
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/todo-app.git
+git clone https://github.com/NgohBuilds/react-learning-project.git
 
-cd Todo-app
+cd Todo_App
 
 npm install
 
@@ -100,6 +100,8 @@ npm run dev
 ### Mobile View
 
 ![Todo App Mobile](./preview/Todo_App_mobile.png)
+![Todo App Mobile](./preview/Todo_App_mobile_light.png)
+
 
 ---
 
