@@ -1,4 +1,4 @@
-#  Todo App
+# 📝 Todo App
 
 A modern, responsive Todo application built with React to consolidate my understanding of the library through a complete, real-world project.
 
@@ -6,6 +6,18 @@ Rather than simply recreating a Todo application, this project was an opportunit
 
 > **Project Status:** ✔️ Core features completed (≈90%)
 > Planned improvements include drag-and-drop reordering and local data persistence using Local Storage.
+
+---
+
+##  Table of Contents
+
+* [Features](#features)
+* [Planned Improvements](#planned-improvements)
+* [Tech Stack](#tech-stack)
+* [What I Learned](#what-i-learned)
+* [Installation](#installation)
+* [Preview](#preview)
+* [Author](#author)
 
 ---
 
@@ -81,14 +93,20 @@ npm run dev
 
 ## Preview
 
-[Todo App Desktop]("./preview/todo_App_desktop.png")
-[Todo App Mobile]("./preview/Todo_App_mobile.png")
+### Desktop View
+
+![Todo App Desktop](./preview/todo_App_desktop.png)
+
+### Mobile View
+
+![Todo App Mobile](./preview/Todo_App_mobile.png)
 
 ---
 
 ## Author
 
 **Gabriel Ngoh**
+
 Master's student in Computer Science (MIAGE), specializing in **Management Information Systems and Application Engineering (MSIIA)**.
 
 Passionate about software engineering and artificial intelligence, I enjoy building projects that strengthen my skills in frontend and backend development while continuously improving my problem-solving and software design abilities.
