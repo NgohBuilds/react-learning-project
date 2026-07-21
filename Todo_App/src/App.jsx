@@ -14,8 +14,7 @@ function App() {
   const [inputValue, setInputValue] = useState('')
   const [tasks, setTasks] = useState(Tasks)
   const [filter, setFilter] = useState('All')
-  
-
+  const leftTasks = tasks.filter(task => !task.completed )
   const filteredTasks = tasks.filter(task => {
     switch(filter) {
         case "Active":
@@ -29,7 +28,6 @@ function App() {
     }
 });
 
-  const leftTasks = tasks.filter(task => !task.completed )
 
   function handleInputValue(e){
       setInputValue(e.target.value)
@@ -101,13 +99,13 @@ function App() {
 
           </ul>
           
-          <div className="summary">
+          <div className={tasks.length === 0 ? "summary invisible" : "summary" }>
             <span className="itemsLeft">{leftTasks.length} items left</span>
             <span className="clearCompleted" onClick={clearCompletedTask}>Clear Completed</span>
           </div>
         </div>
 
-        <div className="filter-btn">
+        <div className={tasks.length === 0 ? "filter-btn invisible" : "filter-btn"} >
           <ul>
             {filterBtns.map((btn , index) =>(
               <li key={index} >
@@ -120,7 +118,7 @@ function App() {
           
         </div>
 
-        <div className="footer">
+        <div className={tasks.length === 0 ? "footer invisible" : "footer"}>
           <p>Drag and drop to reoder list</p>
         </div>
 
