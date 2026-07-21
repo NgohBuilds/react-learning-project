@@ -29,7 +29,7 @@ function App() {
     }
 });
 
-  const leftTasks = tasks.filter(task => task.completed === false)
+  const leftTasks = tasks.filter(task => !task.completed )
 
   function handleInputValue(e){
       setInputValue(e.target.value)
@@ -38,13 +38,13 @@ function App() {
   function handleAddTask(){
     if (inputValue.trim() =="") return 
 
-    setTasks(prevTask => [
+    setTasks(prevTasks => [
       {
       id : Date.now(),
       content : inputValue,
       completed : false
     }, 
-    ...prevTask])
+    ...prevTasks])
     setInputValue("")
   }
 
@@ -92,7 +92,7 @@ function App() {
                 <div>
                   
                   <input type="checkbox" name={task.content}  id={task.id} onChange={()=> handleChecked(task.id)} checked={task.completed} />
-                  {task.completed ? <p className="checked">{task.content}</p> : <p>{task.content}</p> }
+                  <p className={task.completed ? "checked" : ""}>{task.content}</p> 
                   
                 </div>
                 <img src={cross} width="18" height="18" onClick={()=> deleteTasks(task.id)}/>
