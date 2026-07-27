@@ -1,4 +1,4 @@
-[
+export const data = [
   {
     logo: "./assets/images/logo-devlens.svg",
     name: "DevLens",

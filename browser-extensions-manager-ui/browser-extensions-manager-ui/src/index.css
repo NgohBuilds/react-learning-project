@@ -53,3 +53,27 @@
 body{
     font-size: 1rem;
 }
+
+html{
+    --header-bg :var(--header-light) ;
+    --header-icon-bg : var(--bg-icons-light) ;
+    --body-bg : var(--bg-gradient-light);
+    --btn-text : var(--btn-text-light);
+    --btn-text-hover: var(--btn-text-active-light);
+    --border-style: var(--border-light);
+    --card-para-col : var(--card-p-light);
+    --card-bg: var(--card-bg-light) ;
+    
+}
+
+html.dark{
+    --header-bg :var(--header-dark) ;
+    --header-icon-bg : var(--bg-icons-dark) ;
+    --body-bg : var(--bg-gradient-dark);
+    --btn-text : var(--btn-text-dark);
+    --btn-text-hover: var(--btn-text-active-dark);
+    --border-style: var(--border-dark);
+    --card-para-col : var(--card-p-dark);
+    --card-bg: var(--card-bg-dark) ;
+    
+}
