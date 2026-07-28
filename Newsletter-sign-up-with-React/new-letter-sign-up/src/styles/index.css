@@ -1,0 +1,52 @@
+/*Customised Polices*/
+
+@font-face {
+    font-family: "roboto-reg";
+    src: url(../assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: "roboto-bold";
+    src: url(../assets/fonts/Roboto-Bold.ttf);
+}
+
+:root {
+    --blue800 : hsl(234, 29%, 20%);
+    --blue700 : hsl(235, 18%, 26%);
+    --grey : hsl(0, 0%,58%);
+    --white : hsl(0, 0%, 100%);
+}
+
+h1, label{
+    color: var(--blue800);
+    font-family: "roboto-bold";
+}
+
+p{
+    font-family: "roboto-reg";
+}
+
+input{
+    color: var(--grey);
+}
+
+body{
+    background-color: var(--white);
+    color: var(--blue700);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto-reg";
+    min-height: 100vh;
+
+}
+
+button, input{
+
+    font-family: "roboto-bold";
+    padding-block: 1.25rem;
+    outline: none;
+    border: none;
+
+}
+
+

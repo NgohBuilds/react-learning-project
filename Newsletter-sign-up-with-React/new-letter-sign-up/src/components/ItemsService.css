@@ -1,0 +1,22 @@
+ul{
+
+    list-style-type: none;
+    padding-left: 0;
+
+}
+
+.service{
+    display: flex;
+    gap: 1rem;
+}
+
+.service >*{
+    margin-block: .5rem;
+}
+.service img{
+
+    height: fit-content;
+}
+
+
+

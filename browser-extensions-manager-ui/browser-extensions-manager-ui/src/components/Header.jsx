@@ -15,7 +15,9 @@ export function Header(){
                 </clipPath>
             </defs>
         </svg>
-        <img src={headerIcons} alt="Something" />
+        <div className="theme_icons">
+            <img src={headerIcons} alt="Something" />
+        </div>
 
 
     </header>)

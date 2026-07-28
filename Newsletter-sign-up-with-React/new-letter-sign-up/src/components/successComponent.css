@@ -1,0 +1,14 @@
+#userMail{
+    font-weight: bolder;
+}
+
+.container-success{
+
+    max-height: 100vh;
+    display: flex;
+  
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10% 5%;
+
+}

@@ -1,0 +1,19 @@
+header{
+    padding: .5rem;
+    background-color: var(--header-bg);
+    border-radius: .75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .theme_icons{
+    display: flex;
+    align-items: center;
+    aspect-ratio: 1/1;
+    background-color:  var(--header-icon-bg);
+    border-radius: .75rem;
+    padding-inline: 3.5%;
+
+
+}

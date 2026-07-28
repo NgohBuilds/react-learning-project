@@ -21,8 +21,8 @@
     --bg-icons-light : hsl(0, 0%, 78%) ;
     --bg-icons-dark : hsl(225, 23%, 24%);
 
-    --header-light : hsl(227, 75%, 14%);
-    --header-dark : hsl(200, 60%, 99%);
+    --header-light :hsl(200, 60%, 99%);
+    --header-dark :  hsl(227, 75%, 14%);
 
     --btn-text-light : hsl(226, 25%, 17%);
     --btn-text-dark : hsl(0, 0%, 93%);
@@ -52,10 +52,11 @@
 
 body{
     font-size: 1rem;
+    background: var(--body-bg);
 }
 
 html{
-    --header-bg :var(--header-light) ;
+    --header-bg :  var(--header-light) ;
     --header-icon-bg : var(--bg-icons-light) ;
     --body-bg : var(--bg-gradient-light);
     --btn-text : var(--btn-text-light);
@@ -75,5 +76,11 @@ html.dark{
     --border-style: var(--border-dark);
     --card-para-col : var(--card-p-dark);
     --card-bg: var(--card-bg-dark) ;
+    
+}
+
+section {
+    min-height: 100vh;
+    padding: 5%;
     
 }
