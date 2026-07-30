@@ -18,11 +18,11 @@
     --bg-gradient-light : linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
     --bg-gradient-dark : linear-gradient(180deg, #040918 0%, #091540 100%);
 
-    --bg-icons-light : hsl(0, 0%, 78%) ;
+    --bg-icons-light : hsl(0, 0%, 93%);
     --bg-icons-dark : hsl(225, 23%, 24%);
 
     --header-light :hsl(200, 60%, 99%);
-    --header-dark :  hsl(227, 75%, 14%);
+    --header-dark :  hsl(226, 25%, 17%);
 
     --btn-text-light : hsl(226, 25%, 17%);
     --btn-text-dark : hsl(0, 0%, 93%);
@@ -81,6 +81,5 @@ html.dark{
 
 section {
     min-height: 100vh;
-    padding: 5%;
-    
+    padding: 5%;  
 }
