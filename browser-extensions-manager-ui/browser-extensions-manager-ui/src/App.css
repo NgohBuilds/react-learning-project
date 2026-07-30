@@ -14,5 +14,80 @@ header .theme_icons{
     padding: min(.5rem, 5%);
     background-color:  var(--header-icon-bg);
     border-radius: .75rem;
+    transition: 180ms ease-in 5ms;
 
+}
+
+header .theme_icons:hover{
+    opacity: .8;
+    cursor: pointer;
+}
+
+/*CARD EXTENSIONS STYLING*/
+
+.card-ext {
+    background: var(--card-bg);
+    border-radius: .75rem;
+    border: var(--border-style);
+    padding: 1rem;
+}
+
+.card-ext .top_content{
+    display: flex;
+    flex: 1 1 auto;
+    gap: 5%;
+}
+
+.card-ext .top_content h2{
+
+    font-size: clamp(1.25rem, 1.074rem + 0.751vw, 1.75rem);
+    margin-bottom: .5rem;
+
+}
+
+.card-ext .top_content .top_content_text{
+    width: calc(80% - 1rem - 5%) ;
+}
+
+.card-ext .card-opt{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+
+}
+.switch input {
+    display: none;
+}
+
+.slider{
+    display: block;
+    width: 48px;
+    height: 24px;
+    border-radius: 999px;
+    background: var(--slider-bg);
+    position: relative;
+    cursor: pointer;
+    transition: background .25s ease;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px;
+    border-radius: 50%;
+    background: white;
+    transition: transform .25s ease;
+}
+
+input:checked + .slider {
+    background: #3b82f6;
+}
+
+input:checked + .slider::before {
+    transform: translateX(24px);
 }

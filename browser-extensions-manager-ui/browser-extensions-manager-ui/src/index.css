@@ -3,7 +3,7 @@
     src: url(./assets/fonts/static/NotoSans-Bold.woff2);
 }
 @font-face {
-    font-family: NotoSans-Medium;
+    font-family: NotoSans-BoldNotoSans-Bold;
     src: url(./assets/fonts/static/NotoSans-Medium.woff2);
 }
 @font-face {
@@ -30,17 +30,20 @@
     --btn-text-active-light : hsl(0, 0%, 93%);
     --btn-bg-active : hsl(3, 77%, 44%);
 
+    --title-light : hsl(227, 75%, 14%);
+    --title-dark : hsl(200, 60%, 99%);
+
     --btn-text-active-dark : hsl(227, 75%, 14%);
     --btn-bg-active-dark : hsl(3, 86%, 64%) ;
 
-    --border-light : 1px solid hsl(226, 11%, 37%);
+    --border-light : 1px solid hsl(0, 0%, 93%);
     --border-dark : 1px solid hsl(0, 0%, 78%);
 
     --card-p-light : hsl(226, 11%, 37%);
     --card-p-dark: hsl(0, 0%, 78%);
 
     --card-bg-light : white;
-    --card-bg-dark : hsl(226, 11%, 37%); 
+    --card-bg-dark : var(--header-dark); 
 
 }
 
@@ -64,6 +67,9 @@ html{
     --border-style: var(--border-light);
     --card-para-col : var(--card-p-light);
     --card-bg: var(--card-bg-light) ;
+    --title : var(--title-light);
+    --slider-bg: hsl(0, 0%, 78%); 
+
     
 }
 
@@ -76,10 +82,33 @@ html.dark{
     --border-style: var(--border-dark);
     --card-para-col : var(--card-p-dark);
     --card-bg: var(--card-bg-dark) ;
+    --title : var(--title-dark);
+    --slider-bg :hsl(226, 11%, 37%);
+
     
 }
 
 section {
     min-height: 100vh;
     padding: 5%;  
+}
+
+h1, h2, button{
+    color: var(--title);
+    font-family: NotoSans-Bold;
+}
+
+p{
+    color: var(--card-para-col);
+    font-family: NotoSans-Regular;
+    font-size: clamp(14px , 2vh, 1rem); /*Verifier*/
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    outline: var(--border-style);
+    padding: .75rem;
+    border-radius: 1.25rem;
+    font-family: NotoSans-Regular;
 }
