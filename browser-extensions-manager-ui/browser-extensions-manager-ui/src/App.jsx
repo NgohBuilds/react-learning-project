@@ -9,6 +9,7 @@ const html = document.querySelector('html')
 function App() {
 
   const [isDark, setIsDark] = useState(false)
+  // const [data, setData] = useState(data)
 
   function handleDarkTheme(){
 
@@ -16,6 +17,10 @@ function App() {
       html.classList.toggle('dark')    
 
   }
+
+  // function handleToggle(){
+
+  // }
 
   return (
     <>
@@ -29,6 +34,7 @@ function App() {
              title={cardContent.name}
              text={cardContent.description}
              status={cardContent.isActive}
+             //handleToggle={handleToggle}
             />
           ))
         }
