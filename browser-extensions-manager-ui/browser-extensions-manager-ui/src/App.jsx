@@ -54,7 +54,7 @@ function App() {
     <>
       <section>
         <Header onSmash={handleDarkTheme} theme={isDark}/>
-        <TitleFilter title={"Extension List"} onSmash={(e)=>{handleOnClick(e)}}/>
+        <TitleFilter title={"Extension List"} onSmash={(e)=>{handleOnClick(e)} } stateBtn ={filter}/>
         {
           extensionsFiltered.map((cardContent, index)=>(
             <CardExtension

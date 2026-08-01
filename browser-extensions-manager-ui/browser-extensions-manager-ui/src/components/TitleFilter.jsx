@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function TitleFilter({title , onSmash}){
+export function TitleFilter({title , onSmash, stateBtn}){
 
 
 
@@ -8,7 +8,7 @@ export function TitleFilter({title , onSmash}){
         <div>
             <h1>{title}</h1>
             {["All", "Active", "Inactive"].map((filter, index)=> (
-                <button key={index} onClick={onSmash}>{filter}</button>
+                <button key={index} onClick={onSmash}  className={filter === stateBtn ? "active":""}>{filter}</button>
             ))}
 
         </div>
