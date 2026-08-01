@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { data } from "../data"
 
-export default function CardExtension({imgSrc , title, text, status, handleToggle}){
+export default function CardExtension({imgSrc , title, text, status, handleToggle, onDelete}){
 
     return(
         <div className="card-ext">
@@ -14,7 +14,7 @@ export default function CardExtension({imgSrc , title, text, status, handleToggl
  
             </div>
             <div className="card-opt">
-                <button>Remove</button>
+                <button onClick={onDelete}>Remove</button>
                 
                 <label className="switch">
                     <input
