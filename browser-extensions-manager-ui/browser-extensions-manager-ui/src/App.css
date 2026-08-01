@@ -23,6 +23,14 @@ header .theme_icons:hover{
     cursor: pointer;
 }
 
+/*BUTTON FILTER STYLING*/
+
+button.active{
+
+    background-color: var(--active-btn-bg);
+    color: var(--active-btn-text);
+}
+
 /*CARD EXTENSIONS STYLING*/
 
 .card-ext {

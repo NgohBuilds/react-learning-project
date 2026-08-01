@@ -69,8 +69,9 @@ html{
     --card-bg: var(--card-bg-light) ;
     --title : var(--title-light);
     --slider-bg: hsl(0, 0%, 78%); 
+    --active-btn-bg : #C7231A; 
+    --active-btn-text : white;
 
-    
 }
 
 html.dark{
@@ -84,6 +85,8 @@ html.dark{
     --card-bg: var(--card-bg-dark) ;
     --title : var(--title-dark);
     --slider-bg :hsl(226, 11%, 37%);
+    --active-btn-bg : hsl(3, 86%, 64%);
+    --active-btn-text : var(--title-light);
 
     
 }
