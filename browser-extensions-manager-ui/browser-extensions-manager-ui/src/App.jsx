@@ -10,7 +10,17 @@ const html = document.querySelector('html')
 function App() {
 
   const [isDark, setIsDark] = useState(false)
+  const [filter, setFilter] = useState('All')
   const [extension, setExtension] = useState(data)
+  const extensionsFiltered = extension.filter(
+    ext=>
+    {
+      switch(filter){
+        case "Active" : return ext.isActive; break;
+        case "Inactive" : return !ext.isActive; break;
+        default: return true;
+      }
+    })
 
   function handleDarkTheme(){
 
@@ -18,12 +28,6 @@ function App() {
       html.classList.toggle('dark')    
 
   }
-
-//   function handleToggle(e, index){
-
-//     return
-
-// }
 
 
   function handleToggle(ind){
@@ -40,13 +44,19 @@ function App() {
       (_ , index) => index != ind))
   }
 
+
+  function handleOnClick(e){
+
+        setFilter(e.target.textContent)
+    }
+
   return (
     <>
       <section>
         <Header onSmash={handleDarkTheme} theme={isDark}/>
-        <TitleFilter title={"Extension List"}/>
+        <TitleFilter title={"Extension List"} onSmash={(e)=>{handleOnClick(e)}}/>
         {
-          extension.map((cardContent, index)=>(
+          extensionsFiltered.map((cardContent, index)=>(
             <CardExtension
              imgSrc={cardContent.logo}
              title={cardContent.name}
