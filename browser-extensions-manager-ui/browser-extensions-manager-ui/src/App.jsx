@@ -55,6 +55,7 @@ function App() {
       <section>
         <Header onSmash={handleDarkTheme} theme={isDark}/>
         <TitleFilter title={"Extension List"} onSmash={(e)=>{handleOnClick(e)} } stateBtn ={filter}/>
+        <div className="grid-container">
         {
           extensionsFiltered.map((cardContent, index)=>(
             <CardExtension
@@ -67,6 +68,8 @@ function App() {
             />
           ))
         }
+
+        </div>
 
       </section>
     </>
