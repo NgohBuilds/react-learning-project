@@ -23,12 +23,54 @@ header .theme_icons:hover{
     cursor: pointer;
 }
 
+header + div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
+    margin-top: 5%;
+
+    @media screen and (min-width: 600px){
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+}
+
+
+
 /*BUTTON FILTER STYLING*/
 
-button.active{
+header + div .filter-btn button{
+    margin-inline: .5rem;
+    
+    padding-inline: 1rem;
+    font-size: 1rem;
+    background-color: var(--card-bg);
+    cursor: pointer;
+
+}
+
+header + div .filter-btn button.active{
 
     background-color: var(--active-btn-bg);
     color: var(--active-btn-text);
+}
+
+/*GRID CONTAINER STYLING*/
+
+.grid-container{
+    display: grid;
+    gap: .75rem;
+    margin-top: 5%;
+    @media screen and (min-width: 768px){
+        grid-template-columns: repeat(auto-fit, minmax(calc(20rem), 1fr));
+        margin-top: 1.25rem;
+        
+    }
+
+    
 }
 
 /*CARD EXTENSIONS STYLING*/
@@ -48,7 +90,7 @@ button.active{
 
 .card-ext .top_content h2{
 
-    font-size: clamp(1.25rem, 1.074rem + 0.751vw, 1.75rem);
+    font-size: clamp(1rem, 0.875rem + 0.4vi, 1.125rem);
     margin-bottom: .5rem;
 
 }
@@ -93,7 +135,7 @@ button.active{
 }
 
 input:checked + .slider {
-    background: #3b82f6;
+    background: var(--active-btn-bg);
 }
 
 input:checked + .slider::before {

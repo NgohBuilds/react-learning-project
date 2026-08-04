@@ -33,6 +33,10 @@
     --title-light : hsl(227, 75%, 14%);
     --title-dark : hsl(200, 60%, 99%);
 
+    --btn-bg-inactive :white;
+    --btn-bg-inactive-dark :transparent;
+
+
     --btn-text-active-dark : hsl(227, 75%, 14%);
     --btn-bg-active-dark : hsl(3, 86%, 64%) ;
 
@@ -63,6 +67,7 @@ html{
     --header-icon-bg : var(--bg-icons-light) ;
     --body-bg : var(--bg-gradient-light);
     --btn-text : var(--btn-text-light);
+    --btn-bg : var(--btn-bg-inactive);
     --btn-text-hover: var(--btn-text-active-light);
     --border-style: var(--border-light);
     --card-para-col : var(--card-p-light);
@@ -78,6 +83,7 @@ html.dark{
     --header-bg :var(--header-dark) ;
     --header-icon-bg : var(--bg-icons-dark) ;
     --body-bg : var(--bg-gradient-dark);
+    --btn-bg:var(--btn-bg-inactive-dark);
     --btn-text : var(--btn-text-dark);
     --btn-text-hover: var(--btn-text-active-dark);
     --border-style: var(--border-dark);
@@ -93,7 +99,12 @@ html.dark{
 
 section {
     min-height: 100vh;
-    padding: 5%;  
+    padding: 1.5rem 5vw;  
+    @media screen and (min-width:1024px) {
+        padding-inline: 10%;
+        
+    }
+
 }
 
 h1, h2, button{
@@ -111,7 +122,8 @@ button{
     background-color: transparent;
     border: none;
     outline: var(--border-style);
-    padding: .75rem;
-    border-radius: 1.25rem;
+    padding: .5rem .75rem ;
+    border-radius: 1.5rem;
     font-family: NotoSans-Regular;
+    
 }
