@@ -16,9 +16,9 @@ export function Header({onSmash, theme}){
                 </clipPath>
             </defs>
         </svg>
-        <div className="theme_icons" onClick={onSmash}>
+        <button className="theme_icons" onClick={onSmash}>
             <img src={theme ? sunIcon : moonIcon} alt="Something" />
-        </div>
+        </button>
 
 
     </header>)
