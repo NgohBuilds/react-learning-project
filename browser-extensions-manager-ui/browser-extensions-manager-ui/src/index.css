@@ -76,6 +76,8 @@ html{
     --slider-bg: hsl(0, 0%, 78%); 
     --active-btn-bg : #C7231A; 
     --active-btn-text : white;
+    --btn-txt-hover:var(--btn-text-active-light);
+
 
 }
 
@@ -93,8 +95,8 @@ html.dark{
     --slider-bg :hsl(226, 11%, 37%);
     --active-btn-bg : hsl(3, 86%, 64%);
     --active-btn-text : var(--title-light);
+    --btn-txt-hover:var(--btn-text-active-dark);
 
-    
 }
 
 section {
@@ -126,4 +128,8 @@ button{
     border-radius: 1.5rem;
     font-family: NotoSans-Regular;
     
+}
+
+:focus{
+    outline: 2px solid var(--active-btn-bg) ;
 }

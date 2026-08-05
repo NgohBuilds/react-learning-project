@@ -18,8 +18,10 @@ header .theme_icons{
 
 }
 
+/* hsl(0, 0%, 78%) light*/
+/* hsl(226, 11%, 37%) dark button-filter-aussi*/
 header .theme_icons:hover{
-    opacity: .8;
+    background-color:  ;
     cursor: pointer;
 }
 
@@ -44,12 +46,17 @@ header + div{
 
 header + div .filter-btn button{
     margin-inline: .5rem;
-    
     padding-inline: 1rem;
     font-size: 1rem;
     background-color: var(--card-bg);
     cursor: pointer;
+    transition: 180ms ease-in 5ms;
 
+
+}
+
+header + div .filter-btn button:hover{
+    opacity: .8;
 }
 
 header + div .filter-btn button.active{
@@ -107,6 +114,16 @@ header + div .filter-btn button.active{
     margin-top: 1.5rem;
 
 }
+
+.card-ext .card-opt button{
+    transition: 180ms ease-in 5ms;
+
+}
+.card-ext .card-opt button:hover{
+    background-color: var(--active-btn-bg) /*dark*/;
+    color: var(--btn-txt-hover);
+
+}
 .switch input {
     display: none;
 }
@@ -122,6 +139,7 @@ header + div .filter-btn button.active{
     transition: background .25s ease;
 }
 
+
 .slider::before {
     content: "";
     position: absolute;
@@ -136,6 +154,13 @@ header + div .filter-btn button.active{
 
 input:checked + .slider {
     background: var(--active-btn-bg);
+    transition: 180ms ease-in 3ms;
+    
+}
+input:checked + .slider:hover{
+    background: hsl(3, 86%, 64%);/*light*/
+    background: hsl(3, 71%, 56%);/*dark*/
+    
 }
 
 input:checked + .slider::before {
